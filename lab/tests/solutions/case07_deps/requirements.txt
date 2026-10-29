@@ -1,0 +1,2 @@
+tabulette==0.4.0
+click-lite==3.0.2

@@ -1,0 +1,11 @@
+Starling
+Copyright 2026 Robin Vale
+
+starling/backoff.py is copied from Gustwind (https://github.com/gale-systems/gustwind)
+and changed. It stays under the Apache License 2.0, in LICENSES/Apache-2.0.txt.
+Gustwind's NOTICE reads:
+
+Gustwind
+Copyright 2023 The Gustwind Authors
+
+This product includes software developed at Gale Systems (https://gale.example/).
