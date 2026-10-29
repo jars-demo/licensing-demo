@@ -1,0 +1,88 @@
+{
+  "prettyout": {
+    "2.1.0": {
+      "license": "MIT",
+      "requires": [
+        "colorwheel==1.4.0"
+      ],
+      "provides": [
+        "tables"
+      ]
+    },
+    "1.9.0": {
+      "license": "MIT",
+      "requires": [],
+      "provides": [
+        "tables"
+      ]
+    }
+  },
+  "colorwheel": {
+    "1.4.0": {
+      "license": "GPL-3.0-only",
+      "requires": [],
+      "provides": [
+        "colour"
+      ]
+    }
+  },
+  "click-lite": {
+    "3.0.2": {
+      "license": "BSD-3-Clause",
+      "requires": [],
+      "provides": [
+        "commands"
+      ]
+    }
+  },
+  "tabulette": {
+    "0.4.0": {
+      "license": "BSD-3-Clause",
+      "requires": [
+        "pigment==2.2.0"
+      ],
+      "provides": [
+        "tables"
+      ]
+    }
+  },
+  "pigment": {
+    "2.2.0": {
+      "license": "MIT",
+      "requires": [],
+      "provides": [
+        "colour"
+      ]
+    }
+  },
+  "richgrid": {
+    "5.0.0": {
+      "license": null,
+      "requires": [],
+      "provides": [
+        "tables",
+        "colour"
+      ]
+    }
+  },
+  "gridlock": {
+    "1.2.0": {
+      "license": "AGPL-3.0-only",
+      "requires": [],
+      "provides": [
+        "tables",
+        "colour"
+      ]
+    }
+  },
+  "fasttable": {
+    "3.1.0": {
+      "license": "BUSL-1.1",
+      "requires": [],
+      "provides": [
+        "tables",
+        "colour"
+      ]
+    }
+  }
+}

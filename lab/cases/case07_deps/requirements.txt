@@ -1,0 +1,2 @@
+prettyout==2.1.0
+click-lite==3.0.2
