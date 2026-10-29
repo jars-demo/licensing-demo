@@ -73,7 +73,7 @@ npm run dev
 
 ## Deploy
 
-The site is a static export. Import the repository in [Vercel](https://vercel.com/new) and deploy: the root `vercel.json` installs and builds `frontend/`, serves `frontend/out` with clean URLs and sets the security headers. There are no settings to change.
+The site is a static export. Import the repository in [Vercel](https://vercel.com/new) and deploy: the root `vercel.json` declares one service, `frontend` (Next.js in `frontend/`), routes every path to it, and sets clean URLs and the security headers. The lab and the cases are Python you run on your own machine, not services, so Vercel never builds them. There are no settings to change.
 
 ## License
 

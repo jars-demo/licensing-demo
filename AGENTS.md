@@ -24,7 +24,7 @@ frontend/src/lib/site.ts    cases and quoted output: a unit test finds each line
 frontend/src/lib/compat.ts  mirrors lab/nest/compat.json; a unit test keeps them equal
 frontend/src/lib/maggie.ts  Maggie's note and quiz for each page
 frontend/src/lib/tokens.ts  colour pairs; a test checks them against globals.css and WCAG AA
-vercel.json                 builds frontend/ as a static export and serves frontend/out
+vercel.json                 one Vercel service, frontend/ (Next.js static export), public at /
 ```
 
 ## Commands
