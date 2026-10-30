@@ -4,6 +4,8 @@ A hands-on open source licensing workshop. Eight chapters, each explaining one i
 
 **Workshop site:** [licensing.jishanahmed.in](https://licensing.jishanahmed.in)
 
+**Watch the demo:** [youtu.be/_5gdb-rNVYY](https://youtu.be/_5gdb-rNVYY)
+
 > This workshop teaches engineering practice, not law. For anything that matters legally, ask a lawyer.
 
 ## Quick start
