@@ -1,4 +1,4 @@
-"""Read everything a project says about its licence: the file, the README and the manifests."""
+"""Read everything a project says about its license: the file, the README and the manifests."""
 
 import json
 import re
@@ -39,14 +39,14 @@ def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8") if path.is_file() else ""
 
 
-def readme_licence_section(readme: str) -> str | None:
-    """The text under a '## License' (or Licence) heading, up to the next heading."""
+def readme_license_section(readme: str) -> str | None:
+    """The text under a '## License' (or License) heading, up to the next heading."""
     match = re.search(r"^#+\s*licen[cs]e\s*$(.*?)(?=^#|\Z)", readme, re.I | re.M | re.S)
     return match.group(1).strip() if match else None
 
 
 def nested(root: Path, path: Path) -> bool:
-    """Is this file inside a sub-project with its own licence file? Then that licence covers it."""
+    """Is this file inside a sub-project with its own license file? Then that license covers it."""
     folder = path.parent
     while folder != root:
         if any((folder / name).is_file() for name in LICENSE_NAMES):
@@ -85,7 +85,7 @@ def load(root: Path) -> Project:
             project.looks_like = resembles(project.license_text)
             project.holders = copyright_lines(project.license_text)
             break
-    project.readme_section = readme_licence_section(read_text(root / "README.md"))
+    project.readme_section = readme_license_section(read_text(root / "README.md"))
     project.manifests = manifests(root)
     project.notices = [root / name for name in NOTICE_NAMES if (root / name).is_file()]
     return project

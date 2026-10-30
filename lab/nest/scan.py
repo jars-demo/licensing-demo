@@ -1,4 +1,4 @@
-"""nest scan: what a project says about its licence, place by place, and where the places disagree.
+"""nest scan: what a project says about its license, place by place, and where the places disagree.
 
 It reads only files on disk, so you can point it at any repository you have cloned.
 """
@@ -11,7 +11,7 @@ from nest.project import Project, load
 
 
 def names_in(text: str) -> set[str]:
-    """Every licence a piece of prose names, as SPDX ids."""
+    """Every license a piece of prose names, as SPDX ids."""
     lowered = text.lower()
     found = set()
     for alias, spdx in ALIASES.items():
@@ -31,12 +31,12 @@ def problems(project: Project) -> list[str]:
         if project.looks_like:
             found.append(f"LICENSE starts like {project.looks_like}, but its words were changed")
         else:
-            found.append("LICENSE is not a licence text this tool recognises")
+            found.append("LICENSE is not a license text this tool recognises")
     if project.license_file is not None:
         if has_placeholders(project.license_text):
             found.append("LICENSE still has template placeholders in its copyright line")
         elif not project.holders and (truth or project.looks_like) in {"MIT", "ISC"}:
-            # MIT and ISC carry the copyright inside the licence. Apache and the GPL keep it in
+            # MIT and ISC carry the copyright inside the license. Apache and the GPL keep it in
             # NOTICE files and source headers, so their LICENSE has none.
             found.append("LICENSE has no copyright line naming who owns the code")
     if project.readme_section is None:
@@ -50,7 +50,7 @@ def problems(project: Project) -> list[str]:
             found.append("README's License section does not link to LICENSE")
     for item in project.manifests:
         if item.value is None:
-            found.append(f"{item.where} declares no licence")
+            found.append(f"{item.where} declares no license")
         elif spdx_of(item.value) is None:
             meant = loose_spdx(item.value)
             hint = f' (use "{meant}")' if meant else ""
@@ -83,7 +83,7 @@ def report(root: Path) -> list[str]:
     if issues:
         lines.extend(f"  ✗ {issue}" for issue in issues)
     else:
-        lines.append("  ✓ the licence file, README and manifests agree")
+        lines.append("  ✓ the license file, README and manifests agree")
     return lines
 
 

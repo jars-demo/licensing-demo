@@ -5,7 +5,7 @@ run N         show case N's mistake, the way a scanner sees it
 check N       check your fix
 hint N        a nudge from Maggie
 scan PATH     scan any project on disk: LICENSE, README and manifests
-compat [A B]  can code under licence A go into a project under licence B?
+compat [A B]  can code under license A go into a project under license B?
 """
 
 import argparse
@@ -20,7 +20,7 @@ from nest.scan import scan
 LAB = Path(__file__).resolve().parent.parent
 
 CASES = {
-    1: ("case01_no_licence", "The repo nobody could use"),
+    1: ("case01_no_license", "The repo nobody could use"),
     2: ("case02_disagree", "Three answers to one question"),
     3: ("case03_template", "The name that went missing"),
     4: ("case04_apache_copy", "The file that forgot where it came from"),
@@ -38,7 +38,7 @@ HINTS = {
         'license = "MIT" in pyproject.toml.',
     ],
     2: [
-        "Three places name a licence. Which one is the legal text, and which two describe it?",
+        "Three places name a license. Which one is the legal text, and which two describe it?",
         "Robin chose Apache-2.0. Is 'MIT License' a valid SPDX identifier? Is 'ISC'?",
         "Make pyproject.toml and web/package.json say Apache-2.0, and rewrite the README's "
         "License section to name Apache 2.0 and link to LICENSE.",
@@ -50,13 +50,13 @@ HINTS = {
     ],
     4: [
         "Compare starling/backoff.py with upstream/gustwind/gustwind/backoff.py. What got lost?",
-        "Apache-2.0 section 4 asks for four things: the licence, notices kept, changes stated and "
+        "Apache-2.0 section 4 asks for four things: the license, notices kept, changes stated and "
         "the NOTICE carried over.",
-        "Restore the two header lines, add a line saying what Robin changed, ship the licence in "
+        "Restore the two header lines, add a line saying what Robin changed, ship the license in "
         "LICENSES/Apache-2.0.txt, and copy Gustwind's NOTICE lines into a NOTICE file.",
     ],
     5: [
-        "Fonts and icons are software too. What licences do upstream/ say they use?",
+        "Fonts and icons are software too. What licenses do upstream/ say they use?",
         "The OFL travels with the font. ISC wants its copyright and permission notice in copies.",
         "Copy upstream/wren-sans/OFL.txt into assets/fonts/, and upstream/feathery/LICENSE into "
         "assets/icons/.",
@@ -131,7 +131,7 @@ def cmd_scan(args: argparse.Namespace) -> None:
 
 def cmd_compat(args: argparse.Namespace) -> None:
     data = json.loads((Path(__file__).parent / "compat.json").read_text(encoding="utf-8"))
-    licences = data["licences"]
+    licenses = data["licenses"]
     if args.found and args.into:
         found = data["same_as"].get(args.found, args.found)
         verdict, why = data["verdicts"][found][args.into]
@@ -139,10 +139,10 @@ def cmd_compat(args: argparse.Namespace) -> None:
         article = "an" if args.into[0] in "AM" else "a"
         print(f"{args.found} code into {article} {args.into} project: {words[verdict]}\n  {why}")
         return
-    print((f"{'found ↓  into →':<16}" + "".join(f"{name:<14}" for name in licences)).rstrip())
+    print((f"{'found ↓  into →':<16}" + "".join(f"{name:<14}" for name in licenses)).rstrip())
     marks = {"yes": "yes", "cond": "conditions", "no": "no"}
     for found in data["verdicts"]:
-        row = "".join(f"{marks[data['verdicts'][found][into][0]]:<14}" for into in licences)
+        row = "".join(f"{marks[data['verdicts'][found][into][0]]:<14}" for into in licenses)
         print(f"{found:<16}{row}".rstrip())
 
 
@@ -163,9 +163,9 @@ def main() -> None:
     p.add_argument("path")
     p.set_defaults(func=cmd_scan)
     data = json.loads((Path(__file__).parent / "compat.json").read_text(encoding="utf-8"))
-    p = sub.add_parser("compat", help="licence compatibility")
+    p = sub.add_parser("compat", help="license compatibility")
     p.add_argument("found", nargs="?", choices=data["found"])
-    p.add_argument("into", nargs="?", choices=data["licences"])
+    p.add_argument("into", nargs="?", choices=data["licenses"])
     p.set_defaults(func=cmd_compat)
     args = parser.parse_args()
     args.func(args)

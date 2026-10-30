@@ -1,12 +1,12 @@
 # What you ship
 
-> Your dependencies' licences become your problem the moment you ship them, including the ones you never chose.
+> Your dependencies' licenses become your problem the moment you ship them, including the ones you never chose.
 
 **Time:** 20 minutes
 
 ## Goal
 
-Know when a dependency's licence applies to you, tell permissive, weak copyleft, strong copyleft and source-available licences apart, find the package two levels down that nobody chose, and fix it without losing the feature.
+Know when a dependency's license applies to you, tell permissive, weak copyleft, strong copyleft and source-available licenses apart, find the package two levels down that nobody chose, and fix it without losing the feature.
 
 ## The case
 
@@ -23,13 +23,13 @@ Starling is MIT. Packages it ships that are not permissive: 1
   colorwheel 1.4.0: GPL-3.0-only, pulled in by prettyout
 ```
 
-`starling --table` shows notes as a coloured table. Robin asked for prettyout, which is MIT. Its newest version pulls in colorwheel, which is GPL-3.0. Robin ships Starling as a single download with its dependencies inside. The packages, their licences and what they need are in `index.json`.
+`starling --table` shows notes as a coloured table. Robin asked for prettyout, which is MIT. Its newest version pulls in colorwheel, which is GPL-3.0. Robin ships Starling as a single download with its dependencies inside. The packages, their licenses and what they need are in `index.json`.
 
-## When a dependency's licence applies
+## When a dependency's license applies
 
-Most open source licences set their conditions on **distribution**: giving a copy to someone else. If Starling only lists `prettyout` in `requirements.txt` and users install it themselves, Starling distributes none of it. When Starling ships as a single executable, a Docker image or a bundled frontend, it distributes every dependency inside, and must meet every one of their conditions.
+Most open source licenses set their conditions on **distribution**: giving a copy to someone else. If Starling only lists `prettyout` in `requirements.txt` and users install it themselves, Starling distributes none of it. When Starling ships as a single executable, a Docker image or a bundled frontend, it distributes every dependency inside, and must meet every one of their conditions.
 
-That is why a JavaScript bundle, a desktop app and a container image need a licence review, and a library on PyPI mostly does not.
+That is why a JavaScript bundle, a desktop app and a container image need a license review, and a library on PyPI mostly does not.
 
 ## Four families
 
@@ -37,10 +37,10 @@ That is why a JavaScript bundle, a desktop app and a container image need a lice
 | ---------------- | ------------------------------- | -------------------------------------------------------- |
 | Permissive       | MIT, BSD, ISC, Apache-2.0       | Keep the notices                                         |
 | Weak copyleft    | MPL-2.0, LGPL-3.0               | Share the source of that component, and changes to it    |
-| Strong copyleft  | GPL-2.0, GPL-3.0, AGPL-3.0      | Share the whole program's source, under the same licence |
+| Strong copyleft  | GPL-2.0, GPL-3.0, AGPL-3.0      | Share the whole program's source, under the same license |
 | Source-available | BUSL-1.1, SSPL-1.0, Elastic-2.0 | Not open source: limits on production or hosted use      |
 
-And one more: **no licence, or UNKNOWN**. That means no permission at all (chapter 01). Treat it as a blocker until you find the real licence.
+And one more: **no license, or UNKNOWN**. That means no permission at all (chapter 01). Treat it as a blocker until you find the real license.
 
 ## Transitive dependencies
 
@@ -51,18 +51,18 @@ uvx pip-licenses --from=mixed --order=license
 npx --yes license-checker-rseidelsohn --summary
 ```
 
-Run them in CI, and fail the build when a new licence appears outside the list you have approved. A lockfile makes the tree exact, so the check is repeatable.
+Run them in CI, and fail the build when a new license appears outside the list you have approved. A lockfile makes the tree exact, so the check is repeatable.
 
 ## Your options
 
-When a dependency's licence does not fit, you have four ways out:
+When a dependency's license does not fit, you have four ways out:
 
 1. **Pin a version** that does not bring it in, if that version still does the job.
-2. **Swap the package** for one with a licence that fits.
+2. **Swap the package** for one with a license that fits.
 3. **Stop shipping it**: let users install it themselves, if that is honest about how the program works.
-4. **Change your licence** to one that fits the dependency, if you own all your code and want to.
+4. **Change your license** to one that fits the dependency, if you own all your code and want to.
 
-Starling wants to stay MIT and keep coloured tables, so options 1 and 2 are the candidates. Read `index.json` carefully: some packages that give tables and colour have licences that would only move the problem.
+Starling wants to stay MIT and keep coloured tables, so options 1 and 2 are the candidates. Read `index.json` carefully: some packages that give tables and colour have licenses that would only move the problem.
 
 ## Fix the case
 
@@ -87,5 +87,5 @@ Try `prettyout==1.9.0`, then `richgrid==5.0.0`, and run the check after each. Wr
 
 ### More to try
 
-- Run `pip-licenses` or `license-checker` on a project of yours. How many licences appear? Do you recognise them all?
-- Read the licence of a package marked BUSL-1.1. What is its "change date", and what happens then?
+- Run `pip-licenses` or `license-checker` on a project of yours. How many licenses appear? Do you recognise them all?
+- Read the license of a package marked BUSL-1.1. What is its "change date", and what happens then?

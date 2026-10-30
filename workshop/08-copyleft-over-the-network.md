@@ -6,7 +6,7 @@
 
 ## Goal
 
-Understand why the GPL does not reach a program that only runs on your server, what the AGPL adds, when it applies and when it does not, and how to meet it: keep the licence, and link to the source of the exact version you run.
+Understand why the GPL does not reach a program that only runs on your server, what the AGPL adds, when it applies and when it does not, and how to meet it: keep the license, and link to the source of the exact version you run.
 
 ## The case
 
@@ -22,11 +22,11 @@ deploy/site.toml          source_url = ""
 templates/footer.html     no link to the source
 ```
 
-Starling Cloud is Starling in the browser. Its notes sync through a copy of inkpot, an AGPL-3.0 sync server, in `vendor/inkpot/`. Robin changed it (see `CHANGES.md`) and, to keep the repository tidy, replaced its licence with MIT and his own name. The site gives users no way to get the source.
+Starling Cloud is Starling in the browser. Its notes sync through a copy of inkpot, an AGPL-3.0 sync server, in `vendor/inkpot/`. Robin changed it (see `CHANGES.md`) and, to keep the repository tidy, replaced its license with MIT and his own name. The site gives users no way to get the source.
 
-## You cannot change someone else's licence
+## You cannot change someone else's license
 
-Only the copyright owner can relicense code. Robin owns his changes to inkpot, but not inkpot. Putting MIT on the folder does not make it MIT; it only misleads everyone who reads it, and it breaks the AGPL's own conditions, which require keeping its licence and notices. The first fix is to put the real licence back.
+Only the copyright owner can relicense code. Robin owns his changes to inkpot, but not inkpot. Putting MIT on the folder does not make it MIT; it only misleads everyone who reads it, and it breaks the AGPL's own conditions, which require keeping its license and notices. The first fix is to put the real license back.
 
 ## The gap the GPL leaves
 
@@ -73,7 +73,7 @@ uv run python -m nest check 8
   PASS  vendor/inkpot/ is under AGPL-3.0 again, word for word
   PASS  deploy/site.toml points source_url at the source of your version
   PASS  every page footer links to that source
-  PASS  the rest of Starling Cloud keeps its MIT licence
+  PASS  the rest of Starling Cloud keeps its MIT license
 ```
 
 Then run `uv run python -m nest list`. All eight should say `fixed`.
@@ -82,16 +82,16 @@ Then run `uv run python -m nest list`. All eight should say `fixed`.
 
 Take these with you. Each one is a chapter.
 
-1. Every repository gets a licence file with the exact, canonical text. No licence means no permission.
+1. Every repository gets a license file with the exact, canonical text. No license means no permission.
 2. Fill in the copyright line with a real name and year, and leave every other word alone.
-3. Declare the same licence in `LICENSE`, the README and every manifest, as an SPDX identifier.
+3. Declare the same license in `LICENSE`, the README and every manifest, as an SPDX identifier.
 4. When you build on someone's code, keep their copyright notice. Add your name; never replace theirs.
-5. Copying Apache-2.0 code: ship the licence, keep the headers, say what you changed, and carry their NOTICE lines.
-6. Fonts, icons and images have licences. Ship each licence next to the asset it covers.
-7. A licence never grants a trademark. Use other products' names and logos to say what you work with, never to claim endorsement.
-8. Read the licence of every dependency you ship, including the ones two levels down, and check them in CI.
+5. Copying Apache-2.0 code: ship the license, keep the headers, say what you changed, and carry their NOTICE lines.
+6. Fonts, icons and images have licenses. Ship each license next to the asset it covers.
+7. A license never grants a trademark. Use other products' names and logos to say what you work with, never to claim endorsement.
+8. Read the license of every dependency you ship, including the ones two levels down, and check them in CI.
 9. GPL code in something you distribute makes the whole thing GPL. AGPL code you change and run online must offer its source.
-10. Only the owner can change a licence. When in doubt, ask the author, and for anything that matters legally, ask a lawyer.
+10. Only the owner can change a license. When in doubt, ask the author, and for anything that matters legally, ask a lawyer.
 
 ## Exercise
 

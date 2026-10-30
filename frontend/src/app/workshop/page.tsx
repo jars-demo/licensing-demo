@@ -16,7 +16,7 @@ export default function Workshop() {
         <h1 className="display text-[44px] leading-[1.02] text-ink sm:text-[58px]">The chapters</h1>
         <p className="max-w-2xl font-serif text-[19px] leading-relaxed text-ink-2">
           Work through them in order. Each one explains an idea, hands you a small project that gets
-          it wrong, and ends with a check that reads the project the way a licence scanner, or a
+          it wrong, and ends with a check that reads the project the way a license scanner, or a
           careful lawyer, would.
         </p>
       </header>

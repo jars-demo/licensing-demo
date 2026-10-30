@@ -1,6 +1,6 @@
 # Whose code is it anyway?
 
-A hands-on open source licensing workshop. Eight chapters, each explaining one idea in depth, each with a real licensing mistake in Starling, a small open source notebook, for you to fix: no licence, a licence declared three different ways, a template's missing name, a copied Apache file, a font with no papers, a borrowed logo, a GPL package two levels down and a hosted AGPL fork. **Maggie**, the magpie who collects shiny things and keeps their papers, quizzes you along the way.
+A hands-on open source licensing workshop. Eight chapters, each explaining one idea in depth, each with a real licensing mistake in Starling, a small open source notebook, for you to fix: no license, a license declared three different ways, a template's missing name, a copied Apache file, a font with no papers, a borrowed logo, a GPL package two levels down and a hosted AGPL fork. **Maggie**, the magpie who collects shiny things and keeps their papers, quizzes you along the way.
 
 **Workshop site:** [licensing.jishanahmed.in](https://licensing.jishanahmed.in)
 
@@ -26,18 +26,18 @@ uv run python -m nest run 1
 | `uv run python -m nest check N`      | check your fix                                              |
 | `uv run python -m nest hint N`       | a nudge from Maggie                                         |
 | `uv run python -m nest scan PATH`    | scan any project on disk: LICENSE, README and manifests     |
-| `uv run python -m nest compat [A B]` | can code under licence A go into a project under licence B? |
+| `uv run python -m nest compat [A B]` | can code under license A go into a project under license B? |
 
 Each case is a folder in `lab/cases/`: a tiny project with one mistake. Fix the files in it. `upstream/` inside a case stands in for the other projects Starling borrowed from. Start a case over with `git restore cases/` from `lab/`.
 
-Every check reads the project the way a licence scanner would: the exact licence words, the notices that ship, the packages that get installed. A plausible but wrong fix does not pass.
+Every check reads the project the way a license scanner would: the exact license words, the notices that ship, the packages that get installed. A plausible but wrong fix does not pass.
 
 ## The chapters
 
 | #   | Chapter                                                               | The case                                |
 | --- | --------------------------------------------------------------------- | --------------------------------------- |
-| 01  | [No licence, no permission](workshop/01-no-licence-no-permission.md)  | The repo nobody could use               |
-| 02  | [One licence, three places](workshop/02-one-licence-three-places.md)  | Three answers to one question           |
+| 01  | [No license, no permission](workshop/01-no-license-no-permission.md)  | The repo nobody could use               |
+| 02  | [One license, three places](workshop/02-one-license-three-places.md)  | Three answers to one question           |
 | 03  | [Keep their name](workshop/03-keep-their-name.md)                     | The name that went missing              |
 | 04  | [Copying Apache code](workshop/04-copying-apache-code.md)             | The file that forgot where it came from |
 | 05  | [Fonts, icons and images](workshop/05-fonts-icons-and-images.md)      | The font with no papers                 |
@@ -52,7 +52,7 @@ About two and a quarter hours in all. The last chapter ends with a checklist.
 ```text
 lab/cases/            the eight cases: one small project with one licensing mistake each
 lab/nest/             the CLI, the scanner, the checks and the compatibility table
-lab/nest/texts/       canonical licence texts the scanner compares against
+lab/nest/texts/       canonical license texts the scanner compares against
 lab/tests/            every case fails as shipped, passes with tests/solutions/, rejects wrong
                       fixes, and every output quoted in a chapter is real
 workshop/             the chapters, in Markdown

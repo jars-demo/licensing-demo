@@ -1,4 +1,4 @@
-// Can code under one licence go into a project under another? The same table as the lab's
+// Can code under one license go into a project under another? The same table as the lab's
 // `nest compat` (lab/nest/compat.json). A unit test checks that the two never drift apart.
 
 export type Verdict = 'yes' | 'cond' | 'no'
@@ -21,10 +21,10 @@ export type Found = (typeof FOUND)[number]
 
 type Row = Record<Into, readonly [Verdict, string]>
 
-const KEEP = 'Keep its copyright line and licence text with the code.'
-const ASK = 'No licence means no permission. Ask the author, or write your own.'
+const KEEP = 'Keep its copyright line and license text with the code.'
+const ASK = 'No license means no permission. Ask the author, or write your own.'
 const MPL_FILES =
-  'File-level copyleft: the copied files stay MPL-2.0 and their source must stay available. Your other files keep your licence.'
+  'File-level copyleft: the copied files stay MPL-2.0 and their source must stay available. Your other files keep your license.'
 const MPL_GPL = "Allowed unless the files are marked 'Incompatible With Secondary Licenses'."
 const AGPL_WHOLE =
   'The whole work would become AGPL-3.0, including offering the source to users over a network.'
@@ -43,11 +43,11 @@ export const VERDICTS: Record<Exclude<Found, 'BSD-3-Clause' | 'ISC'>, Row> = {
   'Apache-2.0': {
     MIT: [
       'cond',
-      'The copied files stay Apache-2.0: keep the licence, the NOTICE lines and a note of what you changed. Your project becomes MIT and Apache-2.0.',
+      'The copied files stay Apache-2.0: keep the license, the NOTICE lines and a note of what you changed. Your project becomes MIT and Apache-2.0.',
     ],
     'Apache-2.0': [
       'yes',
-      'Keep the licence, carry its NOTICE lines into yours, and say what you changed.',
+      'Keep the license, carry its NOTICE lines into yours, and say what you changed.',
     ],
     'MPL-2.0': [
       'cond',
@@ -83,7 +83,7 @@ export const VERDICTS: Record<Exclude<Found, 'BSD-3-Clause' | 'ISC'>, Row> = {
     'MPL-2.0': ['no', 'Distributing it would make the whole work GPL-2.0.'],
     'GPL-2.0-only': [
       'yes',
-      'Same licence. Keep the notices and share the source when you distribute.',
+      'Same license. Keep the notices and share the source when you distribute.',
     ],
     'GPL-3.0': [
       'no',
@@ -105,10 +105,10 @@ export const VERDICTS: Record<Exclude<Found, 'BSD-3-Clause' | 'ISC'>, Row> = {
     ],
     'MPL-2.0': ['no', 'Distributing it would make the whole work GPL-3.0.'],
     'GPL-2.0-only': ['no', 'GPL-3.0 code cannot go into a GPL-2.0-only work.'],
-    'GPL-3.0': ['yes', 'Same licence. Keep the notices and share the source when you distribute.'],
+    'GPL-3.0': ['yes', 'Same license. Keep the notices and share the source when you distribute.'],
     'AGPL-3.0': [
       'yes',
-      'Section 13 of both licences allows combining them. The combined work is AGPL-3.0.',
+      'Section 13 of both licenses allows combining them. The combined work is AGPL-3.0.',
     ],
   },
   'AGPL-3.0': {
@@ -122,7 +122,7 @@ export const VERDICTS: Record<Exclude<Found, 'BSD-3-Clause' | 'ISC'>, Row> = {
     ],
     'AGPL-3.0': [
       'yes',
-      'Same licence. Offer the source of your modified version to everyone who uses it, including over a network.',
+      'Same license. Offer the source of your modified version to everyone who uses it, including over a network.',
     ],
   },
   none: {

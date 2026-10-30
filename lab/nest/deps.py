@@ -1,6 +1,6 @@
-"""Resolve a requirements file against a small package index, the way a licence scanner does.
+"""Resolve a requirements file against a small package index, the way a license scanner does.
 
-The index (index.json, next to the requirements) lists each package version with its licence,
+The index (index.json, next to the requirements) lists each package version with its license,
 what it needs and what it gives the app. Every requirement is pinned, so the result is exact.
 """
 
@@ -8,7 +8,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-# Licences an MIT project can ship without changing its own licence.
+# Licenses an MIT project can ship without changing its own license.
 PERMISSIVE = {"MIT", "BSD-2-Clause", "BSD-3-Clause", "ISC", "Apache-2.0"}
 
 

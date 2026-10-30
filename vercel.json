@@ -14,6 +14,18 @@
   ],
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/workshop/01-no-licence-no-permission",
+      "destination": "/workshop/01-no-license-no-permission",
+      "permanent": true
+    },
+    {
+      "source": "/workshop/02-one-licence-three-places",
+      "destination": "/workshop/02-one-license-three-places",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

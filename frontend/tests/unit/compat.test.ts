@@ -8,7 +8,7 @@ import { FOUND, INTO, SAME_AS, verdict } from '@/lib/compat'
 // The explorer and `nest compat` must give the same answer for every pair.
 
 type Lab = {
-  licences: string[]
+  licenses: string[]
   found: string[]
   same_as: Record<string, string>
   verdicts: Record<string, Record<string, [string, string]>>
@@ -19,8 +19,8 @@ const lab: Lab = JSON.parse(
 )
 
 describe('compatibility table', () => {
-  it('lists the same licences as the lab', () => {
-    expect([...INTO]).toEqual(lab.licences)
+  it('lists the same licenses as the lab', () => {
+    expect([...INTO]).toEqual(lab.licenses)
     expect([...FOUND]).toEqual(lab.found)
     expect(SAME_AS).toEqual(lab.same_as)
   })

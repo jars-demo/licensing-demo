@@ -1,6 +1,6 @@
 # Names and logos
 
-> Copyright covers the logo file. Trademark covers what the logo means. No open source licence grants the second.
+> Copyright covers the logo file. Trademark covers what the logo means. No open source license grants the second.
 
 **Time:** 15 minutes
 
@@ -29,9 +29,9 @@ Starling for Driftwood keeps notes in a Driftwood DB database. Robin wanted peop
 | -------------------- | ----------------------------- | -------------------------------- |
 | Protects             | A work: code, text, a drawing | A sign of origin: a name, a logo |
 | Answers              | Who may copy this?            | Who does this come from?         |
-| Open source licences | Grant it, on conditions       | Do not grant it                  |
+| Open source licenses | Grant it, on conditions       | Do not grant it                  |
 
-Apache-2.0 says it outright in section 6: the licence does not let you use the licensor's trade names or marks. MIT says nothing about trademarks, and GPL-3.0 mentions them only to let authors refuse trademark rights explicitly. None of them grants one. Even when a logo's file is under an open licence, the mark it shows is not.
+Apache-2.0 says it outright in section 6: the license does not let you use the licensor's trade names or marks. MIT says nothing about trademarks, and GPL-3.0 mentions them only to let authors refuse trademark rights explicitly. None of them grants one. Even when a logo's file is under an open license, the mark it shows is not.
 
 ## What you may say
 

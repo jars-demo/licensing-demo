@@ -109,7 +109,7 @@ export default function Home() {
           eyebrow="What you will learn"
           title="From your first LICENSE to the AGPL"
         >
-          A licence is permission in writing, with conditions. Each chapter takes one kind of
+          A license is permission in writing, with conditions. Each chapter takes one kind of
           permission, shows a project that broke its conditions, and fixes it.
         </SectionHead>
         <ol className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -132,7 +132,7 @@ export default function Home() {
       >
         <div className="flex flex-col gap-5">
           <SectionHead id="explorer-title" eyebrow="Try it" title="Can I use it?">
-            You found some code you want. Pick its licence and your project&apos;s licence, and see
+            You found some code you want. Pick its license and your project&apos;s license, and see
             whether they combine, and on what conditions.
           </SectionHead>
           <ul className="flex flex-col gap-1.5 border-t border-rule pt-4 text-[13.5px] text-ink-2">
@@ -184,7 +184,7 @@ export default function Home() {
               command: 'uv run python -m nest run 2',
               lines: CASE_TWO.run,
               tone: 'text-code-no',
-              note: 'One licence file, three different answers around it.',
+              note: 'One license file, three different answers around it.',
             },
             {
               step: 'Fix it',
@@ -198,7 +198,7 @@ export default function Home() {
               command: 'uv run python -m nest check 2',
               lines: CASE_TWO.check,
               tone: 'text-code-ok',
-              note: 'Every place names the same licence, in words tools understand.',
+              note: 'Every place names the same license, in words tools understand.',
             },
           ].map((card, index) => (
             <li key={card.step} className="flex flex-col gap-3">

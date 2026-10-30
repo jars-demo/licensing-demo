@@ -15,7 +15,7 @@ export const CASES: readonly Case[] = [
   {
     number: '01',
     title: 'The repo nobody could use',
-    topics: 'copyright, choosing a licence',
+    topics: 'copyright, choosing a license',
     symptom: "✗ no LICENSE file: the code is 'all rights reserved' and nobody may reuse it",
   },
   {
@@ -95,11 +95,11 @@ export const CASE_TWO = {
 
 export const LEARN = [
   {
-    title: 'No licence, no permission',
-    text: 'Why public code is still all rights reserved, and how to add a licence with the exact text and a real copyright line.',
+    title: 'No license, no permission',
+    text: 'Why public code is still all rights reserved, and how to add a license with the exact text and a real copyright line.',
   },
   {
-    title: 'One licence, three places',
+    title: 'One license, three places',
     text: 'LICENSE, the README and every manifest, saying the same thing in SPDX identifiers that tools understand.',
   },
   {
@@ -108,7 +108,7 @@ export const LEARN = [
   },
   {
     title: 'Assets and trademarks',
-    text: "Licences for fonts, icons and images, and how to show another product's logo without claiming its endorsement.",
+    text: "Licenses for fonts, icons and images, and how to show another product's logo without claiming its endorsement.",
   },
   {
     title: 'What you ship',
@@ -121,16 +121,16 @@ export const LEARN = [
 ]
 
 export const CHECKLIST = [
-  'Every repository gets a licence file with the exact, canonical text. No licence means no permission.',
+  'Every repository gets a license file with the exact, canonical text. No license means no permission.',
   'Fill in the copyright line with a real name and year, and leave every other word alone.',
-  'Declare the same licence in `LICENSE`, the README and every manifest, as an SPDX identifier.',
+  'Declare the same license in `LICENSE`, the README and every manifest, as an SPDX identifier.',
   "When you build on someone's code, keep their copyright notice. Add your name; never replace theirs.",
-  'Copying Apache-2.0 code: ship the licence, keep the headers, say what you changed, and carry their NOTICE lines.',
-  'Fonts, icons and images have licences. Ship each licence next to the asset it covers.',
-  "A licence never grants a trademark. Use other products' names and logos to say what you work with, never to claim endorsement.",
-  'Read the licence of every dependency you ship, including the ones two levels down, and check them in CI.',
+  'Copying Apache-2.0 code: ship the license, keep the headers, say what you changed, and carry their NOTICE lines.',
+  'Fonts, icons and images have licenses. Ship each license next to the asset it covers.',
+  "A license never grants a trademark. Use other products' names and logos to say what you work with, never to claim endorsement.",
+  'Read the license of every dependency you ship, including the ones two levels down, and check them in CI.',
   'GPL code in something you distribute makes the whole thing GPL. AGPL code you change and run online must offer its source.',
-  'Only the owner can change a licence. When in doubt, ask the author, and for anything that matters legally, ask a lawyer.',
+  'Only the owner can change a license. When in doubt, ask the author, and for anything that matters legally, ask a lawyer.',
 ]
 
 export const QUICKSTART = `git clone https://github.com/jars-demo/licensing-demo.git

@@ -1,12 +1,12 @@
-# One licence, three places
+# One license, three places
 
-> The licence file is the law. The README and the manifests describe it, and they must say the same thing.
+> The license file is the law. The README and the manifests describe it, and they must say the same thing.
 
 **Time:** 15 minutes
 
 ## Goal
 
-Know the three places a project declares its licence and who reads each one, write licence names as SPDX identifiers, and catch the defaults that quietly declare the wrong licence.
+Know the three places a project declares its license and who reads each one, write license names as SPDX identifiers, and catch the defaults that quietly declare the wrong license.
 
 ## The case
 
@@ -36,17 +36,17 @@ Robin moved Starling to Apache-2.0 and replaced `LICENSE`. Everything else still
 
 | Where                                          | Who reads it                                          | What it must hold                                               |
 | ---------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------- |
-| `LICENSE`                                      | Courts, GitHub, licence scanners                      | The full licence text, unmodified                               |
-| `README.md`                                    | People deciding whether to use the project            | A License section naming the same licence, linking to `LICENSE` |
-| `pyproject.toml`, `package.json`, `Cargo.toml` | PyPI, npm, crates.io and every scanner a company runs | The licence's SPDX identifier                                   |
+| `LICENSE`                                      | Courts, GitHub, license scanners                      | The full license text, unmodified                               |
+| `README.md`                                    | People deciding whether to use the project            | A License section naming the same license, linking to `LICENSE` |
+| `pyproject.toml`, `package.json`, `Cargo.toml` | PyPI, npm, crates.io and every scanner a company runs | The license's SPDX identifier                                   |
 
-`LICENSE` is the legal one. When the three disagree, a careful user has to stop and ask which is true, and most will simply pick another project. A company's licence scanner reads only the manifests. If `package.json` says ISC, the scanner records ISC, whatever the licence file says.
+`LICENSE` is the legal one. When the three disagree, a careful user has to stop and ask which is true, and most will simply pick another project. A company's license scanner reads only the manifests. If `package.json` says ISC, the scanner records ISC, whatever the license file says.
 
 ## SPDX identifiers
 
-SPDX is a standard list of short licence names. Tools match these exactly, so `MIT License`, `Apache 2`, and `apache2` are all wrong to a machine, even though a person understands them.
+SPDX is a standard list of short license names. Tools match these exactly, so `MIT License`, `Apache 2`, and `apache2` are all wrong to a machine, even though a person understands them.
 
-| Licence                          | SPDX identifier    |
+| License                          | SPDX identifier    |
 | -------------------------------- | ------------------ |
 | MIT                              | `MIT`              |
 | Apache License 2.0               | `Apache-2.0`       |
@@ -59,12 +59,12 @@ The older `GPL-3.0` id is deprecated because it does not say whether later versi
 
 ## The defaults that lie
 
-Two common ways a project ends up declaring a licence nobody chose:
+Two common ways a project ends up declaring a license nobody chose:
 
 - **npm's default.** `npm init` writes `"license": "ISC"` into every new `package.json`. Unless you change it, your frontend says ISC.
-- **Copied manifests.** A `pyproject.toml` copied from another project brings its licence with it.
+- **Copied manifests.** A `pyproject.toml` copied from another project brings its license with it.
 
-Private packages need the field too. `"private": true` stops npm publishing the package, but scanners still read the licence of everything in the repository.
+Private packages need the field too. `"private": true` stops npm publishing the package, but scanners still read the license of everything in the repository.
 
 ## How to write each one
 
@@ -103,7 +103,7 @@ uv run python -m nest check 2
 ```
 
 ```text
-  PASS  LICENSE is still Apache-2.0, the licence Robin chose
+  PASS  LICENSE is still Apache-2.0, the license Robin chose
   PASS  pyproject.toml declares the SPDX id Apache-2.0
   PASS  web/package.json declares Apache-2.0
   PASS  the README's License section names Apache 2.0, and only that
@@ -117,4 +117,4 @@ Change `LICENSE` to the MIT text instead, so it matches the old README, and run 
 ### More to try
 
 - Search your own repositories for `"license": "ISC"` and ask whether you meant it.
-- Look at the "About" box of a large GitHub project. GitHub shows the licence it detected from the `LICENSE` file, not from the README.
+- Look at the "About" box of a large GitHub project. GitHub shows the license it detected from the `LICENSE` file, not from the README.

@@ -14,7 +14,7 @@ const HOME: Notes = {
   note: 'I am Maggie. Magpies pick up anything shiny, which is how most projects collect code, fonts and logos. I keep the papers for everything I take. Try the explorer on this page: pick what you found and where you want to put it.',
   quiz: [
     {
-      q: 'A public GitHub repository has no licence file. What may you do with its code?',
+      q: 'A public GitHub repository has no license file. What may you do with its code?',
       options: [
         'Anything: it is public',
         'View it, and fork it on GitHub',
@@ -31,42 +31,42 @@ const HOME: Notes = {
         'You must relicense your project as MIT',
       ],
       answer: 1,
-      why: "MIT's one condition is that its copyright notice and permission notice go with every copy. Your project keeps its own licence.",
+      why: "MIT's one condition is that its copyright notice and permission notice go with every copy. Your project keeps its own license.",
     },
   ],
 }
 
 const WORKSHOP: Notes = {
-  note: 'Eight chapters, each a mistake I have seen in real repositories. The first three are about your own licence, the next three about what you borrow, and the last two about what you ship. Each takes 15 to 20 minutes.',
+  note: 'Eight chapters, each a mistake I have seen in real repositories. The first three are about your own license, the next three about what you borrow, and the last two about what you ship. Each takes 15 to 20 minutes.',
   quiz: [
     {
-      q: 'Which of these does a licence scanner read?',
+      q: 'Which of these does a license scanner read?',
       options: ['The README', 'The manifest, such as package.json', 'The commit messages'],
       answer: 1,
-      why: 'Scanners read the licence field in each manifest. That is why a wrong value there matters even when LICENSE is right.',
+      why: 'Scanners read the license field in each manifest. That is why a wrong value there matters even when LICENSE is right.',
     },
     {
-      q: 'Who can change the licence of a piece of code?',
+      q: 'Who can change the license of a piece of code?',
       options: ['Anyone who forks it', 'Whoever hosts it', 'Its copyright owner'],
       answer: 2,
-      why: 'Only the owner can relicense. Everyone else gets the licence the owner chose, with its conditions.',
+      why: 'Only the owner can relicense. Everyone else gets the license the owner chose, with its conditions.',
     },
   ],
 }
 
 const CHAPTERS: Record<string, Notes> = {
   '01': {
-    note: '"Use it however you like" in a README is a kind thought and a legal shrug. A licence says exactly what people may do. Fetch the canonical text, fill in the copyright line, and change nothing else.',
+    note: '"Use it however you like" in a README is a kind thought and a legal shrug. A license says exactly what people may do. Fetch the canonical text, fill in the copyright line, and change nothing else.',
     quiz: [
       {
-        q: 'You add one extra sentence to the MIT text. Is it still the MIT licence?',
+        q: 'You add one extra sentence to the MIT text. Is it still the MIT license?',
         options: [
           'Yes, MIT is flexible',
-          'No, it is a new licence nobody has reviewed',
+          'No, it is a new license nobody has reviewed',
           'Only if the sentence is short',
         ],
         answer: 1,
-        why: 'Tools and lawyers recognise a licence by its exact words. A changed MIT is a custom licence, and every user has to read it from scratch.',
+        why: 'Tools and lawyers recognise a license by its exact words. A changed MIT is a custom license, and every user has to read it from scratch.',
       },
       {
         q: 'What goes in `Copyright (c) [year] [fullname]`?',
@@ -93,7 +93,7 @@ const CHAPTERS: Record<string, Notes> = {
         q: 'LICENSE is Apache-2.0 and the README says MIT. What should you change?',
         options: ['LICENSE, to match the README', 'The README, to match LICENSE', 'Neither'],
         answer: 1,
-        why: 'The licence file is what the author actually granted. The README describes it, so the README is the one that is wrong.',
+        why: 'The license file is what the author actually granted. The README describes it, so the README is the one that is wrong.',
       },
     ],
   },
@@ -110,7 +110,7 @@ const CHAPTERS: Record<string, Notes> = {
         q: 'Does "based on kestrel-template" in the README meet MIT\'s condition?',
         options: [
           'Yes, it is a credit',
-          'No, the notice and licence text must ship',
+          'No, the notice and license text must ship',
           'Only on GitHub',
         ],
         answer: 1,
@@ -119,11 +119,11 @@ const CHAPTERS: Record<string, Notes> = {
     ],
   },
   '04': {
-    note: 'Apache-2.0 is generous and tidy. It asks for four things: the licence, the notices, a line saying what you changed, and the upstream NOTICE lines. Miss one and the permission does not hold.',
+    note: 'Apache-2.0 is generous and tidy. It asks for four things: the license, the notices, a line saying what you changed, and the upstream NOTICE lines. Miss one and the permission does not hold.',
     quiz: [
       {
         q: 'You changed a file you copied from an Apache-2.0 project. What must the file say?',
-        options: ['Nothing new', 'That you changed it', 'That it is now under your licence'],
+        options: ['Nothing new', 'That you changed it', 'That it is now under your license'],
         answer: 1,
         why: 'Section 4(b): modified files must carry a prominent notice that you changed them.',
       },
@@ -153,15 +153,15 @@ const CHAPTERS: Record<string, Notes> = {
         why: 'The OFL allows almost any use, including commercial software. It forbids selling the font by itself.',
       },
       {
-        q: 'An icon pack is free to download. Is that a licence?',
-        options: ['Yes', 'No, find its actual licence', 'Only for personal use'],
+        q: 'An icon pack is free to download. Is that a license?',
+        options: ['Yes', 'No, find its actual license', 'Only for personal use'],
         answer: 1,
-        why: '"Free" describes the price, not the permission. Look for the licence file before using it.',
+        why: '"Free" describes the price, not the permission. Look for the license file before using it.',
       },
     ],
   },
   '06': {
-    note: 'A logo file can be under an open licence while the mark it shows is not. Say what you work with, never who backs you.',
+    note: 'A logo file can be under an open license while the mark it shows is not. Say what you work with, never who backs you.',
     quiz: [
       {
         q: 'Which wording is safe?',
@@ -170,29 +170,29 @@ const CHAPTERS: Record<string, Notes> = {
         why: 'It names the product to say what yours connects to, and claims no relationship with its owner.',
       },
       {
-        q: 'Does the MIT licence of a project grant its trademark?',
+        q: 'Does the MIT license of a project grant its trademark?',
         options: [
           'Yes, everything is MIT',
-          'No, licences do not grant trademarks',
+          'No, licenses do not grant trademarks',
           'Only the logo',
         ],
         answer: 1,
-        why: 'Copyright licences cover the work. Trademarks are a separate right, and Apache-2.0 even says so outright.',
+        why: 'Copyright licenses cover the work. Trademarks are a separate right, and Apache-2.0 even says so outright.',
       },
     ],
   },
   '07': {
-    note: 'Nobody chose colorwheel. It came along with prettyout. Read the whole tree, not just your own requirements, and let CI stop new licences you have not approved.',
+    note: 'Nobody chose colorwheel. It came along with prettyout. Read the whole tree, not just your own requirements, and let CI stop new licenses you have not approved.',
     quiz: [
       {
-        q: "When do a dependency's licence conditions apply to you?",
+        q: "When do a dependency's license conditions apply to you?",
         options: [
           'Whenever it is listed in requirements.txt',
           'When you distribute it, for example in a bundle or image',
           'Never, dependencies are their own problem',
         ],
         answer: 1,
-        why: 'Most licences set conditions on distribution. A Docker image, desktop app or JavaScript bundle distributes everything inside it.',
+        why: 'Most licenses set conditions on distribution. A Docker image, desktop app or JavaScript bundle distributes everything inside it.',
       },
       {
         q: 'A package is under BUSL-1.1. What is it?',

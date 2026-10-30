@@ -1,12 +1,12 @@
 # Copying Apache code
 
-> Apache-2.0 asks for four things when you share its code: the licence, the notices, a note of your changes, and its NOTICE file.
+> Apache-2.0 asks for four things when you share its code: the license, the notices, a note of your changes, and its NOTICE file.
 
 **Time:** 20 minutes
 
 ## Goal
 
-Read section 4 of the Apache License 2.0 and turn it into a short list you can follow, understand the NOTICE file and the patent licence, and copy a file from an Apache project into an MIT project correctly.
+Read section 4 of the Apache License 2.0 and turn it into a short list you can follow, understand the NOTICE file and the patent license, and copy a file from an Apache project into an MIT project correctly.
 
 ## The case
 
@@ -27,20 +27,20 @@ Starling retries syncs with a backoff function copied from Gustwind, an Apache-2
 
 ## Section 4, as a list
 
-When you share Apache-2.0 code, changed or not, section 4 of the licence asks you to:
+When you share Apache-2.0 code, changed or not, section 4 of the license asks you to:
 
-1. **Give a copy of the licence** to everyone who receives the code.
+1. **Give a copy of the license** to everyone who receives the code.
 2. **Mark changed files**: any file you modified must carry a prominent notice saying you changed it.
 3. **Keep the notices**: every copyright, patent, trademark and attribution notice in the source stays.
 4. **Carry the NOTICE file**: if the project you copied has a `NOTICE` file, its attribution lines go into a `NOTICE` file of yours.
 
-Your own project keeps its own licence. Starling stays MIT. Only the copied file is Apache-2.0, which makes Starling "MIT, with one file under Apache-2.0". Say so in the README.
+Your own project keeps its own license. Starling stays MIT. Only the copied file is Apache-2.0, which makes Starling "MIT, with one file under Apache-2.0". Say so in the README.
 
 ## The NOTICE file
 
-`NOTICE` is Apache's place for attribution that must travel with the code: who wrote it, and credits the authors require. It is plain text, and it is not the licence.
+`NOTICE` is Apache's place for attribution that must travel with the code: who wrote it, and credits the authors require. It is plain text, and it is not the license.
 
-Two rules keep it useful. Copy the upstream attribution lines exactly. And add only attribution: no licence terms, no marketing, no changelog.
+Two rules keep it useful. Copy the upstream attribution lines exactly. And add only attribution: no license terms, no marketing, no changelog.
 
 ## Saying what you changed
 
@@ -56,11 +56,11 @@ One line is enough. It tells readers that a bug in this file may be Robin's, not
 
 ## SPDX headers and the LICENSES folder
 
-`SPDX-License-Identifier: Apache-2.0` is a one-line way to say which licence a file is under. It does not replace the licence text, which must still ship with the project. The [REUSE](https://reuse.software) convention keeps one copy of each licence in a `LICENSES/` folder, named by its identifier, such as `LICENSES/Apache-2.0.txt`. Scanners and people both understand it.
+`SPDX-License-Identifier: Apache-2.0` is a one-line way to say which license a file is under. It does not replace the license text, which must still ship with the project. The [REUSE](https://reuse.software) convention keeps one copy of each license in a `LICENSES/` folder, named by its identifier, such as `LICENSES/Apache-2.0.txt`. Scanners and people both understand it.
 
-## The patent licence
+## The patent license
 
-Apache-2.0 has something MIT does not. Section 3 gives you a licence to any patents the contributors hold that cover their contributions. And if you sue someone claiming the code infringes your patent, your patent licence from that project ends. This is the main reason companies prefer Apache-2.0, and it is why GPL-2.0, which has no such terms and forbids extra ones, cannot be combined with it.
+Apache-2.0 has something MIT does not. Section 3 gives you a license to any patents the contributors hold that cover their contributions. And if you sue someone claiming the code infringes your patent, your patent license from that project ends. This is the main reason companies prefer Apache-2.0, and it is why GPL-2.0, which has no such terms and forbids extra ones, cannot be combined with it.
 
 ## Fix the case
 
@@ -88,7 +88,7 @@ uv run python -m nest check 4
 
 ## Exercise
 
-Change the SPDX line in your fix to `SPDX-License-Identifier: MIT`, so the whole project looks like one licence, and run the check. Who is allowed to change the licence of Gustwind's code?
+Change the SPDX line in your fix to `SPDX-License-Identifier: MIT`, so the whole project looks like one license, and run the check. Who is allowed to change the license of Gustwind's code?
 
 ### More to try
 

@@ -3,14 +3,14 @@
 import tomllib
 from pathlib import Path
 
-from nest.checks import claims, header, ships_licence
+from nest.checks import claims, header, ships_license
 from nest.deps import PERMISSIVE, label, resolve
 from nest.licenses import copyright_lines, identify
 from nest.project import notices_text, read_text
 from nest.scan import report
 
 
-def licence_of(path: Path) -> str:
+def license_of(path: Path) -> str:
     text = read_text(path)
     holders = copyright_lines(text)
     return f"{identify(text) or '?'} · {holders[0] if holders else '(no copyright line)'}"
@@ -24,7 +24,7 @@ def run_scan(root: Path) -> None:
 def run_03(root: Path) -> None:
     run_scan(root)
     upstream = copyright_lines(read_text(root / "upstream/kestrel-template/LICENSE"))[0]
-    found = ships_licence(root, "MIT", "2019 Kestrel Labs")
+    found = ships_license(root, "MIT", "2019 Kestrel Labs")
     print()
     print(f"{'starling/cli_base.py':<30}from kestrel-template")
     print(f"{'kestrel-template is':<30}MIT · {upstream}")
@@ -49,17 +49,17 @@ def run_04(root: Path) -> None:
 
 
 def run_05(root: Path) -> None:
-    font = ships_licence(root, "OFL-1.1", "The Wren Sans Project Authors", "assets/fonts")
-    icons = ships_licence(root, "ISC", "Feathery Contributors")
+    font = ships_license(root, "OFL-1.1", "The Wren Sans Project Authors", "assets/fonts")
+    icons = ships_license(root, "ISC", "Feathery Contributors")
     rows = [
         ("assets/fonts/WrenSans-Regular.woff2", "OFL-1.1", font),
         ("assets/icons/ (3 icons, Feathery)", "ISC", icons),
     ]
-    print(f"{'file':<38}{'licence':<10}licence shipped")
+    print(f"{'file':<38}{'license':<10}license shipped")
     for name, spdx, ok in rows:
         print(f"{name:<38}{spdx:<10}{'yes' if ok else 'no'}")
     print()
-    print(f"Starling's LICENSE: {licence_of(root / 'LICENSE')}")
+    print(f"Starling's LICENSE: {license_of(root / 'LICENSE')}")
 
 
 def run_06(root: Path) -> None:
@@ -90,7 +90,7 @@ def run_07(root: Path) -> None:
 def run_08(root: Path) -> None:
     site = tomllib.loads(read_text(root / "deploy/site.toml"))
     footer = read_text(root / "templates/footer.html")
-    print(f"{'vendor/inkpot/LICENSE':<26}{licence_of(root / 'vendor/inkpot/LICENSE')}")
+    print(f"{'vendor/inkpot/LICENSE':<26}{license_of(root / 'vendor/inkpot/LICENSE')}")
     print(f"{'upstream/inkpot/LICENSE':<26}{identify(read_text(root / 'upstream/inkpot/LICENSE'))}")
     print(f"{'vendor/inkpot/CHANGES.md':<26}modified by Robin Vale")
     print(f'{"deploy/site.toml":<26}source_url = "{site.get("source_url", "")}"')

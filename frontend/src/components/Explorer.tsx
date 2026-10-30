@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 import { FOUND, type Found, INTO, type Into, type Verdict, verdict, WORDS } from '@/lib/compat'
 
-// "Can I use it?": pick the licence of the code you found and the licence of your project, and
+// "Can I use it?": pick the license of the code you found and the license of your project, and
 // see whether they combine. Every verdict pairs its colour with an icon and a word.
 
 const LOOK: Record<Verdict, string> = {
@@ -22,7 +22,7 @@ const LABEL: Record<Found, string> = {
   'GPL-2.0-only': 'GPL-2.0-only',
   'GPL-3.0': 'GPL-3.0',
   'AGPL-3.0': 'AGPL-3.0',
-  none: 'No licence',
+  none: 'No license',
 }
 
 export function Mark({ kind, size = 14 }: { kind: Verdict; size?: number }) {
@@ -115,7 +115,7 @@ export function Explorer() {
         <p className="text-[15px] leading-relaxed text-ink-2">{why}</p>
       </div>
       <div className="border-t border-rule px-4 py-4 sm:px-5">
-        <p className="eyebrow mb-3">{LABEL[found]} code, into every licence</p>
+        <p className="eyebrow mb-3">{LABEL[found]} code, into every license</p>
         <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3">
           {INTO.map((target) => {
             const [each] = verdict(found, target)

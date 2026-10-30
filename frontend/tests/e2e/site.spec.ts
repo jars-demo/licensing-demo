@@ -9,8 +9,8 @@ test('home shows the index and opens chapter 01', async ({ page }) => {
   await expect(page.getByRole('figure').first()).toContainText('pulled in by prettyout')
 
   await page.getByRole('link', { name: 'Start chapter 01' }).click()
-  await expect(page).toHaveURL(/\/workshop\/01-no-licence-no-permission$/)
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('No licence, no permission')
+  await expect(page).toHaveURL(/\/workshop\/01-no-license-no-permission$/)
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('No license, no permission')
 })
 
 test('the explorer answers for every pair', async ({ page }) => {
@@ -25,9 +25,9 @@ test('the explorer answers for every pair', async ({ page }) => {
   await expect(answer).toHaveText('Yes, with conditions')
   await expect(explorer.getByRole('status')).toContainText('NOTICE lines')
 
-  await explorer.getByRole('button', { name: 'No licence' }).click()
+  await explorer.getByRole('button', { name: 'No license' }).click()
   await expect(answer).toHaveText('No')
-  await expect(explorer.getByRole('status')).toContainText('No licence means no permission')
+  await expect(explorer.getByRole('status')).toContainText('No license means no permission')
 })
 
 test('Maggie quizzes you, and closes with Escape', async ({ page }) => {

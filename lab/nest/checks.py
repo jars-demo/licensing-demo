@@ -1,7 +1,7 @@
 """The checks: check_NN(root) -> [(label, ok)].
 
 Each check tests the promise, not the shape of one fix. It reads the project as a scanner or a
-lawyer would: the licence words on disk, the notices that ship, the packages that get installed.
+lawyer would: the license words on disk, the notices that ship, the packages that get installed.
 """
 
 import json
@@ -27,11 +27,11 @@ def files(root: Path, within: str = ""):
             yield path, read_text(path)
 
 
-def ships_licence(root: Path, spdx: str, holder: str, within: str = "") -> bool:
-    """Is this holder's copyright shipped together with the full licence text?
+def ships_license(root: Path, spdx: str, holder: str, within: str = "") -> bool:
+    """Is this holder's copyright shipped together with the full license text?
 
-    Either a licence file of that kind names the holder, or a notices file holds both the
-    holder's copyright line and the licence's full words.
+    Either a license file of that kind names the holder, or a notices file holds both the
+    holder's copyright line and the license's full words.
     """
     for _, text in files(root, within):
         if identify(text) == spdx and any(holder in line for line in copyright_lines(text)):
@@ -42,7 +42,7 @@ def ships_licence(root: Path, spdx: str, holder: str, within: str = "") -> bool:
     return holder in notices and canonical(spdx) in _body(notices)
 
 
-def manifest_licence(path: Path) -> str | None:
+def manifest_license(path: Path) -> str | None:
     if path.name == "pyproject.toml":
         value = tomllib.loads(read_text(path) or "").get("project", {}).get("license")
     else:
@@ -60,14 +60,14 @@ def check_01(root: Path) -> list[tuple[str, bool]]:
     named = any("Robin Vale" in h and YEAR.search(h) for h in project.holders)
     return [
         ("a LICENSE file at the root of the project", project.license_file is not None),
-        ("LICENSE is the MIT licence, word for word", project.license_id == "MIT"),
+        ("LICENSE is the MIT license, word for word", project.license_id == "MIT"),
         (
             "its copyright line names Robin Vale and a year",
             named and not has_placeholders(project.license_text),
         ),
         (
             'pyproject.toml declares license = "MIT"',
-            manifest_licence(root / "pyproject.toml") == "MIT",
+            manifest_license(root / "pyproject.toml") == "MIT",
         ),
     ]
 
@@ -77,16 +77,16 @@ def check_02(root: Path) -> list[tuple[str, bool]]:
     section = project.readme_section or ""
     return [
         (
-            "LICENSE is still Apache-2.0, the licence Robin chose",
+            "LICENSE is still Apache-2.0, the license Robin chose",
             project.license_id == "Apache-2.0",
         ),
         (
             "pyproject.toml declares the SPDX id Apache-2.0",
-            manifest_licence(root / "pyproject.toml") == "Apache-2.0",
+            manifest_license(root / "pyproject.toml") == "Apache-2.0",
         ),
         (
             "web/package.json declares Apache-2.0",
-            manifest_licence(root / "web" / "package.json") == "Apache-2.0",
+            manifest_license(root / "web" / "package.json") == "Apache-2.0",
         ),
         (
             "the README's License section names Apache 2.0, and only that",
@@ -99,14 +99,14 @@ def check_02(root: Path) -> list[tuple[str, bool]]:
 def check_03(root: Path) -> list[tuple[str, bool]]:
     project = load(root)
     return [
-        ("LICENSE is still the MIT licence, word for word", project.license_id == "MIT"),
+        ("LICENSE is still the MIT license, word for word", project.license_id == "MIT"),
         (
             "Robin Vale's copyright line is still there",
             any("Robin Vale" in h for h in project.holders),
         ),
         (
             "kestrel-template's notice, Copyright (c) 2019 Kestrel Labs, ships with the code",
-            ships_licence(root, "MIT", "2019 Kestrel Labs"),
+            ships_license(root, "MIT", "2019 Kestrel Labs"),
         ),
     ]
 
@@ -150,16 +150,16 @@ def check_04(root: Path) -> list[tuple[str, bool]]:
 def check_05(root: Path) -> list[tuple[str, bool]]:
     return [
         (
-            "the Wren Sans licence (OFL-1.1) ships next to the font",
+            "the Wren Sans license (OFL-1.1) ships next to the font",
             any(identify(text) == "OFL-1.1" for _, text in files(root, "assets/fonts")),
         ),
         (
             "and it carries the font's copyright line",
-            ships_licence(root, "OFL-1.1", "The Wren Sans Project Authors", "assets/fonts"),
+            ships_license(root, "OFL-1.1", "The Wren Sans Project Authors", "assets/fonts"),
         ),
         (
-            "the Feathery icons' ISC licence and copyright ship with Starling",
-            ships_licence(root, "ISC", "Feathery Contributors"),
+            "the Feathery icons' ISC license and copyright ship with Starling",
+            ships_license(root, "ISC", "Feathery Contributors"),
         ),
         ("Starling's own LICENSE is still MIT, and still Robin's", still_robins_mit(root)),
     ]
@@ -231,7 +231,7 @@ def check_08(root: Path) -> list[tuple[str, bool]]:
             "every page footer links to that source",
             bool(re.search(r'href="\{\{\s*source_url\s*\}\}"', footer)),
         ),
-        ("the rest of Starling Cloud keeps its MIT licence", still_robins_mit(root)),
+        ("the rest of Starling Cloud keeps its MIT license", still_robins_mit(root)),
     ]
 
 

@@ -10,7 +10,7 @@ Guidance for coding agents and developers. Humans: start with [README.md](README
 
 ```text
 lab/cases/caseNN_*/         one small project with one deliberate licensing mistake each
-lab/nest/licenses.py        recognise a licence from its exact words; copyright lines
+lab/nest/licenses.py        recognise a license from its exact words; copyright lines
 lab/nest/project.py         what a project declares: LICENSE, README section, manifests, notices
 lab/nest/scan.py            `nest scan PATH`, which works on any folder
 lab/nest/checks.py          check_NN(root) -> [(label, ok)]; reads the project like a scanner
@@ -41,8 +41,8 @@ Set `CHROMIUM_PATH` to use an installed Chromium if Playwright's own is missing.
 ## Rules
 
 1. **The mistakes are the product.** Never fix a case in `lab/cases/`. Change a case, its check and its solution together, and keep `test_case_is_broken_as_shipped` passing.
-2. **Checks test the promise.** Recognise licences by their exact words, read the notices that actually ship, resolve the real dependency tree. Add a wrong fix to `test_mutations.py` when you find one that slips through.
-3. **Licence texts are canonical.** `lab/nest/texts/` holds the texts from `gh api licenses/<id>`. Never edit them.
+2. **Checks test the promise.** Recognise licenses by their exact words, read the notices that actually ship, resolve the real dependency tree. Add a wrong fix to `test_mutations.py` when you find one that slips through.
+3. **License texts are canonical.** `lab/nest/texts/` holds the texts from `gh api licenses/<id>`. Never edit them.
 4. **Standard library only** in `lab/`. Pin exact versions everywhere else.
 5. **Every output is real.** Output in chapters and on the site comes from real runs, and tests compare them. Rerun and update both together.
 6. **Colours mean one thing.** Green is allowed or a pass, blue is allowed with conditions, red is not allowed or a failure, teal is where you are. Always pair colour with an icon and a word.

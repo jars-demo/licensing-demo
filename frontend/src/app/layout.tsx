@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: '%s · Whose code is it anyway?',
   },
   description:
-    'A hands-on open source licensing workshop: eight real licensing mistakes in one small project. Choosing a licence, SPDX, keeping notices, Apache NOTICE files, fonts and logos, dependencies and the AGPL.',
+    'A hands-on open source licensing workshop: eight real licensing mistakes in one small project. Choosing a license, SPDX, keeping notices, Apache NOTICE files, fonts and logos, dependencies and the AGPL.',
 }
 
 export const viewport: Viewport = { themeColor: '#141414' }

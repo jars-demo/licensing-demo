@@ -1,8 +1,8 @@
-"""Recognise a licence from its text, the way GitHub and licence scanners do.
+"""Recognise a license from its text, the way GitHub and license scanners do.
 
-A licence file is recognised by its words, not its file name. Copyright lines and the title are
+A license file is recognised by its words, not its file name. Copyright lines and the title are
 set aside first, because they differ in every project. What is left must match the canonical text
-word for word: change one condition and the file is no longer that licence.
+word for word: change one condition and the file is no longer that license.
 """
 
 import re
@@ -14,7 +14,7 @@ TEXTS = Path(__file__).resolve().parent / "texts"
 # The canonical texts in texts/, as published by the SPDX and choosealicense.com projects.
 KNOWN = ("MIT", "ISC", "Apache-2.0", "GPL-3.0", "AGPL-3.0", "OFL-1.1")
 
-# How people write licence names, mapped to the SPDX identifier tools expect.
+# How people write license names, mapped to the SPDX identifier tools expect.
 ALIASES = {
     "mit": "MIT",
     "mit license": "MIT",
@@ -42,8 +42,8 @@ TITLES = {
     "sil open font license",
 }
 
-# A copyright line has a year or a placeholder right after the word. Licence sentences such as
-# "copyright notice that is included" never do, so they stay part of the licence's words.
+# A copyright line has a year or a placeholder right after the word. License sentences such as
+# "copyright notice that is included" never do, so they stay part of the license's words.
 COPYRIGHT = re.compile(r"^\s*(copyright\s*(\(c\)|©)?\s*[\[<\d]|\(c\)\s*\d|©\s*\d)", re.I)
 PLACEHOLDER = re.compile(r"\[(year|yyyy|fullname|email|name of copyright owner)\]|<year>", re.I)
 
@@ -54,7 +54,7 @@ def _normalise(text: str) -> str:
 
 
 def _body(text: str) -> str:
-    """The licence's own words: no copyright lines, no title, whitespace and case ignored."""
+    """The license's own words: no copyright lines, no title, whitespace and case ignored."""
     kept = []
     for line in text.splitlines():
         bare = line.strip().lower().rstrip(".")
@@ -70,7 +70,7 @@ def canonical(spdx: str) -> str:
 
 
 def identify(text: str) -> str | None:
-    """The SPDX id of a licence text, if it is one of the known licences, unmodified."""
+    """The SPDX id of a license text, if it is one of the known licenses, unmodified."""
     body = _body(text)
     for spdx in KNOWN:
         if body == canonical(spdx):
@@ -79,7 +79,7 @@ def identify(text: str) -> str | None:
 
 
 def resembles(text: str) -> str | None:
-    """The licence a text starts like, even when someone has changed its words."""
+    """The license a text starts like, even when someone has changed its words."""
     body = _body(text)
     for spdx in KNOWN:
         if body[:300] and canonical(spdx)[:300] == body[:300]:
@@ -88,7 +88,7 @@ def resembles(text: str) -> str | None:
 
 
 def spdx_of(name: str) -> str | None:
-    """The SPDX id for a licence name, or None when the name is not a valid identifier."""
+    """The SPDX id for a license name, or None when the name is not a valid identifier."""
     if name in KNOWN or name in {"GPL-3.0-only", "GPL-3.0-or-later", "AGPL-3.0-or-later"}:
         return ALIASES.get(name.lower(), name)
     return None

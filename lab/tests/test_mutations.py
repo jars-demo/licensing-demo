@@ -25,8 +25,8 @@ def solution(name: str, rel: str) -> str:
     return (SOLUTIONS / name / rel).read_text(encoding="utf-8")
 
 
-def pyproject(licence: str) -> str:
-    return f'[project]\nname = "starling"\nversion = "0.4.0"\nlicense = "{licence}"\n'
+def pyproject(license: str) -> str:
+    return f'[project]\nname = "starling"\nversion = "0.4.0"\nlicense = "{license}"\n'
 
 
 SOLVED_04 = {
@@ -72,7 +72,7 @@ WRONG = {
             "README.md": "# Starling\n\n## License\n\n[Apache License 2.0](LICENSE)\n",
         },
     ),
-    "02 README names two licences": (
+    "02 README names two licenses": (
         2,
         {
             "pyproject.toml": pyproject("Apache-2.0"),
@@ -85,7 +85,7 @@ WRONG = {
         3,
         {"README.md": f"# Starling\n\nBased on kestrel-template, {KESTREL}.\n"},
     ),
-    "03 Kestrel's line in a NOTICE, without the licence": (3, {"NOTICE": KESTREL + "\n"}),
+    "03 Kestrel's line in a NOTICE, without the license": (3, {"NOTICE": KESTREL + "\n"}),
     "04 header back, but no note of the change": (
         4,
         {
@@ -94,7 +94,7 @@ WRONG = {
             "# SPDX-License-Identifier: Apache-2.0\n\n" + CODE_04,
         },
     ),
-    "04 everything but the licence text": (
+    "04 everything but the license text": (
         4,
         {
             "NOTICE": SOLVED_04["NOTICE"],
@@ -109,7 +109,7 @@ WRONG = {
             "# SPDX-License-Identifier: MIT\n# Changed by Robin Vale: added jitter.\n\n" + CODE_04,
         },
     ),
-    "05 font licence at the root, not by the font": (
+    "05 font license at the root, not by the font": (
         5,
         {"OFL.txt": OFL, "assets/icons/LICENSE": ICONS},
     ),
@@ -142,7 +142,7 @@ WRONG = {
         7,
         {"requirements.txt": "prettyout==1.9.0\nclick-lite==3.0.2\n"},
     ),
-    "07 richgrid, which has no licence": (
+    "07 richgrid, which has no license": (
         7,
         {"requirements.txt": "richgrid==5.0.0\nclick-lite==3.0.2\n"},
     ),
@@ -160,7 +160,7 @@ WRONG = {
             "templates/footer.html": FIXED_FOOTER,
         },
     ),
-    "08 delete the vendored licence": (
+    "08 delete the vendored license": (
         8,
         {
             "vendor/inkpot/LICENSE": None,
@@ -186,7 +186,7 @@ RIGHT = {
             "pyproject.toml": pyproject("MIT"),
         },
     ),
-    "03 Kestrel's notice and licence in THIRD_PARTY_NOTICES.md": (
+    "03 Kestrel's notice and license in THIRD_PARTY_NOTICES.md": (
         3,
         {
             "THIRD_PARTY_NOTICES.md": "# Third-party notices\n\n## kestrel-template\n\n"
